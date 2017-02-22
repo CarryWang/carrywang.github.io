@@ -7,6 +7,7 @@
 <style>
     *{
         margin: 0;
+        font-family: "Microsoft YaHei";
     }
     #main-background{
         position: absolute;
@@ -16,9 +17,31 @@
         background: -webkit-linear-gradient(to left, #e96443 , #904e95); /* Chrome 10-25, Safari 5.1-6 */
         background: linear-gradient(to left, #e96443 , #904e95); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     }
+    #main-background > canvas{
+        position: absolute;
+    }
+    #card{
+        position: absolute;
+        width: 50%;
+        height: 20%;
+        background-color: rgba(0, 0, 0, 0.3);
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        color: white;
+        text-align: center;
+        border-radius: 2px;
+    }
+    h1{
+        font-weight: normal;
+        padding-top: 50px;
+    }
 </style>
 <body>
 <div id="main-background"></div>
+<div id="card">
+    <h1>Welcome To My World</h1>
+</div>
 <script src="//cdn.bootcss.com/particles.js/2.0.0/particles.min.js"></script>
 <script>
     particlesJS.load('main-background','particlesjs-config.json');
