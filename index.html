@@ -9,6 +9,9 @@
         margin: 0;
     }
     #main-background{
+        position: absolute;
+        width: 100%;
+        height: 100%;
         background: #e96443; /* fallback for old browsers */
         background: -webkit-linear-gradient(to left, #e96443 , #904e95); /* Chrome 10-25, Safari 5.1-6 */
         background: linear-gradient(to left, #e96443 , #904e95); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
@@ -18,7 +21,7 @@
 <div id="main-background"></div>
 <script src="//cdn.bootcss.com/particles.js/2.0.0/particles.min.js"></script>
 <script>
-    particlesJS.load('main-background','particles.json');
+    particlesJS.load('main-background','particlesjs-config.json');
 </script>
 </body>
 
