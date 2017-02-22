@@ -5,12 +5,23 @@
     <title>Title</title>
 </head>
 <style>
-    h1{
-        font-family: "Microsoft YaHei";
+    *{
+        margin: 0;
+    }
+    #main-background{
+        background-color: aqua;
+        width: 100vw;
+        height: 100vh;
     }
 </style>
 <body>
-<h1>Hello World</h1>
-<a href="./about/index.html">xixi</a>
+<div id="main-background"></div>
+<script src="./particles.min.js"></script>
+<script>
+    particlesJS.load('main-background', 'particles.json', function() {
+        console.log('callback - particles.js config loaded');
+    });
+</script>
 </body>
+
 </html>
