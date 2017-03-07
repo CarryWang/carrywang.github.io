@@ -3,11 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <title>Carry wang</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <style>
     * {
         margin: 0;
         font-family: "Microsoft YaHei";
+    }
+    html {
+        font-size: 16px;
     }
 
     #wrapper {
@@ -18,14 +22,14 @@
         background: #FFAFBD; /* fallback for old browsers */
         background: linear-gradient(to left, #FFAFBD , #ffc3a0); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
         perspective: 1000px;
-
+        position: relative;
+        padding: 1rem;
     }
 
     #card {
         position: relative;
-        max-width: 100%;
-        min-width: 27em;
-        padding: 4.5em 3em 3em 3em;
+        min-width: 20rem;
+        padding: 4.5rem 3rem 3rem;
         background: #ffffff;
         border-radius: 4px;
         cursor: default;
@@ -34,6 +38,12 @@
         transform: rotate3d(0.5, 0.1, 0.1, 90deg) scale(0);
         box-shadow: 0 2rem 4rem 0.25rem rgba(46, 43, 55, 0.575);
         animation: card 1s 1s forwards ease-in-out;
+    }
+    @media screen and (max-width: 480px){
+        #card {
+            min-width: 0;
+            width: 100%;
+        }
     }
 
     @keyframes card {
@@ -92,7 +102,4 @@
     </section>
 </div>
 </body>
-<script>
-
-</script>
 </html>
