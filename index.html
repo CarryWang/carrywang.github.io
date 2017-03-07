@@ -5,19 +5,23 @@
     <title>Carry wang</title>
 </head>
 <style>
-    *{
+    * {
         margin: 0;
         font-family: "Microsoft YaHei";
     }
-    #wrapper{
+
+    #wrapper {
         display: flex;
         align-items: center;
         justify-content: center;
         height: 100vh;
-        background-color: antiquewhite;
+        background: #FFAFBD; /* fallback for old browsers */
+        background: linear-gradient(to left, #FFAFBD , #ffc3a0); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+        perspective: 1000px;
+
     }
 
-    #card{
+    #card {
         position: relative;
         max-width: 100%;
         min-width: 27em;
@@ -25,19 +29,27 @@
         background: #ffffff;
         border-radius: 4px;
         cursor: default;
-        opacity: 0.95;
+        opacity: 0;
         text-align: center;
-        transform-origin: 50% 50%;
-        transform: rotateX(0deg);
-        transition: opacity 1s ease, transform 1s ease;
+        transform: rotate3d(0.5, 0.1, 0.1, 90deg) scale(0);
         box-shadow: 0 2rem 4rem 0.25rem rgba(46, 43, 55, 0.575);
+        animation: card 1s 1s forwards ease-in-out;
     }
-    .avatar{
+
+    @keyframes card {
+        to {
+            transform: rotate3d(0,0,0,0deg) scale(1);
+            opacity: 1;
+        }
+    }
+
+    .avatar {
         position: relative;
         display: block;
         margin-bottom: 1.5em;
     }
-    .avatar:before{
+
+    .avatar:before {
         content: '';
         display: block;
         position: absolute;
@@ -48,7 +60,8 @@
         z-index: -1;
         background: #c8cccf;
     }
-    .avatar img{
+
+    .avatar img {
         width: 125px;
         height: 125px;
         display: block;
@@ -56,28 +69,28 @@
         border-radius: 100%;
         box-shadow: 0 0 0 1.5em #ffffff;
     }
-    h1{
+
+    h1 {
         font-size: 1.85em;
         margin: 0 0 0.525em 0;
         color: #313f47;
         line-height: 1.5;
     }
-    p{
+
+    p {
         margin: 0 0 1em 0;
     }
 </style>
 <body>
-    <div id="wrapper">
-        <section id="card">
-            <header>
-                <span class="avatar"><img src="images/avatar.jpg" alt=""></span>
-                <h1>Carry Wang</h1>
-                <p>Welcome to My World</p>
-            </header>
-
-        </section>
-
-    </div>
+<div id="wrapper">
+    <section id="card">
+        <header>
+            <span class="avatar"><img src="images/avatar.jpg" alt=""></span>
+            <h1>Carry Wang</h1>
+            <p>Welcome to My World</p>
+        </header>
+    </section>
+</div>
 </body>
 <script>
 
