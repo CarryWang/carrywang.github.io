@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Carry Wang</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        font-family: "Microsoft YaHei";
+    }
+
+    #main-background {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: #e96443; /* fallback for old browsers */
+        background: -webkit-linear-gradient(to left, #e96443, #904e95); /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(to left, #e96443, #904e95); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    }
+
+    #main-background > canvas {
+        position: absolute;
+    }
+
+    #card {
+        position: absolute;
+        width: 50%;
+        height: 20%;
+        background-color: rgba(0, 0, 0, 0.3);
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: white;
+        text-align: center;
+        border-radius: 2px;
+    }
+
+    h1 {
+        font-weight: normal;
+        padding-top: 50px;
+    }
+
+    #myCanvas {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        width: 600px;
+        height: 600px;
+        opacity: 0;
+        animation: fadeIn 0.5s 0.5s forwards;
+    }
+
+    @keyframes fadeIn {
+        to{
+            opacity: 1;
+        }
+    }
+
+</style>
+<body>
+<div id="main-background"></div>
+<!--<div id="card">-->
+<!--<h1>Welcome To My World</h1>-->
+<!--</div>-->
+<div id="myCanvas">
+
+</div>
+<script src="//cdn.bootcss.com/particles.js/2.0.0/particles.min.js"></script>
+<script src='https://cdn.bootcss.com/echarts/3.2.2/echarts.js'></script>
+<script src='echarts-liquidfill.min.js'></script>
+<script>
+        particlesJS.load('main-background','particlesjs-config.json');
+
+
+    var nodea = document.querySelector('#myCanvas');
+    var myChart = echarts.init(nodea);
+    var option = {
+        series: [{
+            type: 'liquidFill',
+            data: [{
+                name: 'Welcome \n\n To My World',
+                value: 0.8
+            }, 0.7, 0.5, 0.3],
+            color: ['#955091', '#b15676', '#cf5e5b', '#de614c'],
+            itemStyle: {
+                normal: {
+                    opacity: 0.7
+                },
+                emphasis: {
+                    opacity: 0.8
+                }
+            },
+            label: {
+                normal: {
+                    formatter: '{b}',
+                    textStyle: {
+                        fontSize: 20
+                    }
+                }
+            },
+            outline: {
+                itemStyle: {
+                    borderColor: '#904e95'
+                }
+            }
+        }]
+    };
+
+    myChart.setOption(option);
+
+
+</script>
+</body>
+
+</html>
