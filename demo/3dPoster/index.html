@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Carry Wang , design.carrywang@gmail.com"/>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>3D-Poster</title>
+</head>
+<style>
+    body {
+        perspective: 1000px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0;
+        height: 100vh;
+    }
+
+    #poster {
+        width: 300px;
+        height: 300px;
+        border-radius: 3px;
+        background-color: plum;
+    }
+
+    .test {
+        width: 100%;
+        height: 50px;
+        background-color: rgba(255, 0, 0, 0.67);
+    }
+
+    .test2 {
+        width: 100%;
+        height: 50px;
+        background-color: rgba(0, 0, 255, 0.8);
+    }
+</style>
+<body>
+<div id="poster">
+    <div class="test"></div>
+    <div class="test2"></div>
+</div>
+</body>
+<script src="//cdn.bootcss.com/jquery/3.1.1/jquery.slim.min.js"></script>
+<script>
+    $(window).on('mousemove', function (e) {
+
+        //鼠标当前坐标（cursorX，cursorY）
+        let cursorX = e.pageX;
+        let cursorY = e.pageY;
+
+        //中心点的坐标（centerX，centerY）
+        let centerX = $(window).width() / 2;
+        let centerY = $(window).height() / 2;
+
+        //鼠标点相对与中心点的偏移量（offsetX,offsetY）
+        let offsetX = cursorX - centerX;
+        let offsetY = cursorY - centerY;
+
+        //规定最大偏移角度
+        let deg = 45;
+        let offset = 10;
+
+        //比例映射
+        let scaleX = offsetX / centerX;
+        let scaleY = offsetY / centerY;
+
+
+
+        let transform = `rotateX(${-scaleY*deg}deg) rotateY(${scaleX*deg}deg)`;
+        $('#poster').css({transform});
+
+        let transform2 = `translate(${scaleX*offset}px,${scaleY*offset}px)`;
+        $('.test').css({transform:transform2});
+
+        let transform3 = `translate(${scaleX*offset*2}px,${scaleY*offset*2}px)`;
+        $('.test2').css({transform:transform3});
+
+    })
+
+
+</script>
+</html>
