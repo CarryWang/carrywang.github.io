@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    body{
+        margin: 0;
+    }
+
+    body{
+        perspective: 2000px;
+    }
+    .container{
+        position: fixed;
+        height: 1000px;
+        overflow: hidden;
+        width: 50%;
+        transform: rotateX(70deg) rotateY(0deg) rotateZ(30deg);
+    }
+    .scroll-box{
+        overflow-y: scroll;
+        position: absolute;
+        top: 0;
+        right: -17px;
+        left: 0;
+        bottom:0;
+    }
+
+    .card{
+        height: 200px;
+    }
+    .c1{
+        background-color: aqua;
+    }
+    .c2{
+        background-color: #7f82ff;
+    }
+    .c3{
+        background-color: #ff7276;
+    }
+    .c4{
+        background-color: #77ff9f;
+    }
+    .c5{
+        background-color: #cbff6f;
+    }
+
+    #parent{
+        height: 100px;
+        width: 100%;
+        overflow: hidden;
+    }
+
+    #child{
+        width: 100%;
+        height: 100%;
+        overflow-y: scroll;
+        padding-right: 17px; /* Increase/decrease this value for cross-browser compatibility */
+    }
+</style>
+<body>
+    <div class="container">
+        <div class="scroll-box">
+            <div class="c1 card"></div>
+            <div class="c2 card"></div>
+            <div class="c3 card"></div>
+            <div class="c4 card"></div>
+            <div class="c5 card"></div>
+            <div class="c1 card"></div>
+            <div class="c2 card"></div>
+            <div class="c3 card"></div>
+            <div class="c4 card"></div>
+            <div class="c5 card"></div>
+        </div>
+    </div>
+
+</body>
+<script src="//cdn.bootcss.com/jquery/3.1.1/jquery.slim.min.js"></script>
+<script>
+//    let $w = $(window);
+//    console.log($w.scrollTop())
+    $(window).scroll(function() {
+        $(".scroll-box").scroll();
+    });
+//$(".scroll-box").scroll(function(){
+//    console.log(1)
+//});
+</script>
+</html>
