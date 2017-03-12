@@ -2,6 +2,9 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="author" content="Carry Wang , design.carrywang@gmail.com"/>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Carry wang</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="carry icon" href="images/carry.ico">
@@ -11,6 +14,7 @@
     * {
         margin: 0;
         font-family: 'Roboto Condensed', sans-serif ,"Microsoft YaHei";
+        box-sizing: border-box;
     }
     html {
         font-size: 16px;
@@ -35,12 +39,18 @@
         background: #ffffff;
         border-radius: 4px;
         cursor: default;
-        opacity: 0;
         text-align: center;
         transform: rotate3d(0.5, 0.1, 0.1, 90deg) scale(0);
         box-shadow: 0 2rem 4rem 0.25rem rgba(46, 43, 55, 0.575);
-        animation: card 1s 1s forwards ease-in-out;
+
     }
+
+    .animate{
+        animation: card 1s forwards ease-in-out;
+        opacity: 0;
+    }
+
+
     @media screen and (max-width: 480px){
         #card {
             min-width: 0;
@@ -95,7 +105,7 @@
 </style>
 <body>
 <div id="wrapper">
-    <section id="card">
+    <section id="card" class="animate">
         <header>
             <span class="avatar"><img src="images/avatar.jpg" alt=""></span>
             <h1>Carry Wang</h1>
@@ -104,4 +114,38 @@
     </section>
 </div>
 </body>
+<script src="//cdn.bootcss.com/jquery/3.1.1/jquery.slim.min.js"></script>
+<script>
+    $(window).on('mousemove', function (e) {
+
+        //鼠标当前坐标（cursorX，cursorY）
+        let cursorX = e.pageX;
+        let cursorY = e.pageY;
+
+        //中心点的坐标（centerX，centerY）
+        let centerX = $(window).width() / 2;
+        let centerY = $(window).height() / 2;
+
+        //鼠标点相对与中心点的偏移量（offsetX,offsetY）
+        let offsetX = cursorX - centerX;
+        let offsetY = cursorY - centerY;
+
+        //规定最大偏移角度
+        let deg = 30;
+        let offset = 10;
+
+        //比例映射
+        let scaleX = offsetX / centerX;
+        let scaleY = offsetY / centerY;
+
+
+        let transform = `rotateX(${-scaleY*deg}deg) rotateY(${scaleX*deg}deg)`;
+
+        let $dom = $('#card');
+        $dom.removeClass('animate').css({transform});
+
+    })
+
+
+</script>
 </html>
