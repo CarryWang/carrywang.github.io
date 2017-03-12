@@ -40,13 +40,13 @@
         border-radius: 4px;
         cursor: default;
         text-align: center;
-        transform: rotate3d(0.5, 0.1, 0.1, 90deg) scale(0);
         box-shadow: 0 2rem 4rem 0.25rem rgba(46, 43, 55, 0.575);
 
     }
 
     .animate{
-        animation: card 1s forwards ease-in-out;
+        animation: card 2s forwards ease-in-out;
+        transform: rotate3d(0.5, 0.1, 0.1, 90deg) scale(0);
         opacity: 0;
     }
 
@@ -116,36 +116,39 @@
 </body>
 <script src="//cdn.bootcss.com/jquery/3.1.1/jquery.slim.min.js"></script>
 <script>
-    $(window).on('mousemove', function (e) {
+    let $card = $('#card'),$window = $(window);
 
-        //鼠标当前坐标（cursorX，cursorY）
-        let cursorX = e.pageX;
-        let cursorY = e.pageY;
+    function mouseCtrl() {
+        $window.on('mousemove', function (e) {
 
-        //中心点的坐标（centerX，centerY）
-        let centerX = $(window).width() / 2;
-        let centerY = $(window).height() / 2;
+            //鼠标当前坐标（cursorX，cursorY）
+            let cursorX = e.pageX;
+            let cursorY = e.pageY;
 
-        //鼠标点相对与中心点的偏移量（offsetX,offsetY）
-        let offsetX = cursorX - centerX;
-        let offsetY = cursorY - centerY;
+            //中心点的坐标（centerX，centerY）
+            let centerX = $(window).width() / 2;
+            let centerY = $(window).height() / 2;
 
-        //规定最大偏移角度
-        let deg = 30;
-        let offset = 10;
+            //鼠标点相对与中心点的偏移量（offsetX,offsetY）
+            let offsetX = cursorX - centerX;
+            let offsetY = cursorY - centerY;
 
-        //比例映射
-        let scaleX = offsetX / centerX;
-        let scaleY = offsetY / centerY;
+            //规定最大偏移角度
+            let deg = 30;
+            let offset = 10;
+
+            //比例映射
+            let scaleX = offsetX / centerX;
+            let scaleY = offsetY / centerY;
 
 
-        let transform = `rotateX(${-scaleY*deg}deg) rotateY(${scaleX*deg}deg)`;
+            let transform = `rotateX(${-scaleY*deg}deg) rotateY(${scaleX*deg}deg)`;
 
-        let $dom = $('#card');
-        $dom.removeClass('animate').css({transform});
+            $card.removeClass('animate').css({transform});
+        })
+    }
 
-    })
-
+    setTimeout(mouseCtrl,2000)
 
 </script>
 </html>
