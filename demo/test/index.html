@@ -14,18 +14,29 @@
     }
     .container{
         position: fixed;
-        height: 1000px;
-        overflow: hidden;
-        width: 50%;
-        transform: rotateX(70deg) rotateY(0deg) rotateZ(30deg);
-    }
-    .scroll-box{
-        overflow-y: scroll;
-        position: absolute;
+        /*overflow: hidden;*/
+        /*width: 50vw;*/
+        /*height: 100vh;*/
+        /*transform: rotateX(70deg) rotateY(0deg) rotateZ(30deg);*/
         top: 0;
-        right: -17px;
+        right: 0;
         left: 0;
         bottom:0;
+        background-color: red;
+    }
+    .scroll-box{
+        overflow-y: hidden;
+        position: absolute;
+        /*width: 100%;*/
+        /*height: 100%;*/
+        top: 0;
+        right: 0;
+        left: 0;
+        bottom:0;
+    }
+    .scroll-box:hover{
+        overflow-y: scroll;
+        overflow-x: hidden;
     }
 
     .card{
@@ -62,18 +73,18 @@
 </style>
 <body>
     <div class="container">
-        <div class="scroll-box">
-            <div class="c1 card"></div>
-            <div class="c2 card"></div>
-            <div class="c3 card"></div>
-            <div class="c4 card"></div>
-            <div class="c5 card"></div>
-            <div class="c1 card"></div>
-            <div class="c2 card"></div>
-            <div class="c3 card"></div>
-            <div class="c4 card"></div>
-            <div class="c5 card"></div>
-        </div>
+        <!--<div class="scroll-box">-->
+            <!--<div class="c1 card"></div>-->
+            <!--<div class="c2 card"></div>-->
+            <!--<div class="c3 card"></div>-->
+            <!--<div class="c4 card"></div>-->
+            <!--<div class="c5 card"></div>-->
+            <!--<div class="c1 card"></div>-->
+            <!--<div class="c2 card"></div>-->
+            <!--<div class="c3 card"></div>-->
+            <!--<div class="c4 card"></div>-->
+            <!--<div class="c5 card"></div>-->
+        <!--</div>-->
     </div>
 
 </body>
