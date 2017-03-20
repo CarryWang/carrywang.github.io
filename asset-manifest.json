@@ -1,22 +1,12 @@
 {
-  "main.css": "static/css/main.9273075b.css",
-  "main.css.map": "static/css/main.9273075b.css.map",
-  "main.js": "static/js/main.249ff93f.js",
-  "main.js.map": "static/js/main.249ff93f.js.map",
-  "static\\media\\logo.svg": "static/media/logo.5d5d9eef.svg",
-  "static\\media\\oronge.png": "static/media/oronge.2545424e.png",
-  "static\\media\\p1.jpg": "static/media/p1.9955ed94.jpg",
-  "static\\media\\p2.jpg": "static/media/p2.f6fa59c9.jpg",
-  "static\\media\\p3.jpg": "static/media/p3.dd38b026.jpg",
-  "static\\media\\p4.jpg": "static/media/p4.f135824b.jpg",
-  "static\\media\\p5.jpg": "static/media/p5.fe581a6d.jpg",
-  "static\\media\\p6.jpg": "static/media/p6.3f326bc7.jpg",
+  "main.css": "static/css/main.5253c2ef.css",
+  "main.css.map": "static/css/main.5253c2ef.css.map",
+  "main.js": "static/js/main.13421070.js",
+  "main.js.map": "static/js/main.13421070.js.map",
   "static\\media\\s1.svg": "static/media/s1.05479b9c.svg",
   "static\\media\\s2.svg": "static/media/s2.872a97b5.svg",
   "static\\media\\s3.svg": "static/media/s3.b2c5e6f6.svg",
   "static\\media\\s4.svg": "static/media/s4.4a92804d.svg",
   "static\\media\\s5.svg": "static/media/s5.c697e208.svg",
-  "static\\media\\s6.svg": "static/media/s6.6d5ed8af.svg",
-  "static\\media\\wallhaven1.jpg": "static/media/wallhaven1.cbcf7d98.jpg",
-  "static\\media\\wallhaven2.jpg": "static/media/wallhaven2.23f27c59.jpg"
+  "static\\media\\s6.svg": "static/media/s6.6d5ed8af.svg"
 }
