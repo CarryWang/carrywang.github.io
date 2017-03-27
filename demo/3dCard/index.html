@@ -5,19 +5,28 @@
     <meta name="author" content="Carry Wang , design.carrywang@gmail.com"/>
     <meta name="renderer" content="webkit">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Carry wang</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="carry icon" href="../media/carry.ico">
-    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <title>Carry wang</title>
 </head>
 <style>
     * {
         margin: 0;
-        font-family: 'Roboto Condensed', sans-serif ,"Microsoft YaHei";
+        font-family: 'Roboto Condensed', sans-serif, "Microsoft YaHei";
         box-sizing: border-box;
     }
+
     html {
         font-size: 16px;
+    }
+
+    .back {
+        position: fixed;
+        top: 20px;
+        left: 20px;
+        cursor: pointer;
     }
 
     #wrapper {
@@ -26,7 +35,7 @@
         justify-content: center;
         height: 100vh;
         background: #FFAFBD; /* fallback for old browsers */
-        background: linear-gradient(to left, #FFAFBD , #ffc3a0); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+        background: linear-gradient(to left, #FFAFBD, #ffc3a0); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
         perspective: 1000px;
         position: relative;
         padding: 1rem;
@@ -44,14 +53,13 @@
 
     }
 
-    .animate{
+    .animate {
         animation: card 2s forwards ease-in-out;
         transform: rotate3d(0.5, 0.1, 0.1, 90deg) scale(0);
         opacity: 0;
     }
 
-
-    @media screen and (max-width: 480px){
+    @media screen and (max-width: 480px) {
         #card {
             min-width: 0;
             width: 100%;
@@ -60,7 +68,7 @@
 
     @keyframes card {
         to {
-            transform: rotate3d(0,0,0,0deg) scale(1);
+            transform: rotate3d(0, 0, 0, 0deg) scale(1);
             opacity: 1;
         }
     }
@@ -113,10 +121,13 @@
         </header>
     </section>
 </div>
+<div class="back">
+    <i class="material-icons" onclick="window.history.back()">arrow_back</i>
+</div>
 </body>
 <script src="//cdn.bootcss.com/jquery/3.1.1/jquery.slim.min.js"></script>
 <script>
-    let $card = $('#card'),$window = $(window);
+    let $card = $('#card'), $window = $(window);
 
     function mouseCtrl() {
         $window.on('mousemove', function (e) {
@@ -142,13 +153,13 @@
             let scaleY = offsetY / centerY;
 
 
-            let transform = `rotateX(${-scaleY*deg}deg) rotateY(${scaleX*deg}deg)`;
+            let transform = `rotateX(${-scaleY * deg}deg) rotateY(${scaleX * deg}deg)`;
 
             $card.removeClass('animate').css({transform});
         })
     }
 
-    setTimeout(mouseCtrl,2000)
+    setTimeout(mouseCtrl, 2000)
 
 </script>
 </html>

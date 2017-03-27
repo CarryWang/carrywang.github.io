@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Carry Wang , design.carrywang@gmail.com"/>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="carry icon" href="../media/carry.ico">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <title>Diffused Shadow</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        font-family: 'Roboto Condensed', sans-serif, "Microsoft YaHei";
+        box-sizing: border-box;
+    }
+
+    html {
+        height: 100%;
+    }
+
+    html, body, .item {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        align-content: center;
+    }
+
+    .back {
+        position: fixed;
+        top: 20px;
+        left: 20px;
+        cursor: pointer;
+    }
+
+    .item {
+        width: 100%;
+        padding: 50px 0;
+
+    }
+
+    /*按钮样式*/
+    button {
+        padding: 18px 60px;
+        border-radius: 50px;
+        border: 0;
+        font-size: 18px;
+        position: relative;
+        color: white;
+        transition: all 0.3s ease-out;
+        transform-style: preserve-3d;
+        cursor: pointer;
+    }
+
+    button:before {
+        content: '';
+        display: inline-block;
+        height: 40px;
+        position: absolute;
+        bottom: -5px;
+        left: 30px;
+        right: 30px;
+        z-index: -1;
+        border-radius: 50px;
+        filter: blur(20px);
+        transition: all 0.3s ease-out;
+        transform-style: preserve-3d;
+    }
+
+    button:hover {
+        transform: scale(0.95);
+        filter: brightness(1.05) contrast(1.05);
+    }
+
+    button:hover:before {
+        bottom: 0;
+        filter: blur(10px) brightness(0.95);
+    }
+
+    .color1 {
+        background: linear-gradient(to right, #52A0FD 0%, #00e2fa 80%, #00e2fa 100%);
+    }
+
+    .color1:before {
+        background: linear-gradient(to right, #52A0FD 0%, #00e2fa 80%, #00e2fa 100%);
+    }
+
+    .color2 {
+        background: linear-gradient(to right, #44ea76 0%, #39fad7 80%, #39fad7 100%);
+    }
+
+    .color2:before {
+        background: linear-gradient(to right, #44ea76 0%, #39fad7 80%, #39fad7 100%);
+    }
+
+    .color3 {
+        background: linear-gradient(to right, #fa6c9f 0%, #ffe140 80%, #ffe140 100%);
+    }
+
+    .color3:before {
+        background: linear-gradient(to right, #fa6c9f 0%, #ffe140 80%, #ffe140 100%);
+    }
+
+    .color4 {
+        background: linear-gradient(to right, #e96443 0%, #ac62b1 80%, #c069c5 100%);
+    }
+
+    .color4:before {
+        background: linear-gradient(to right, #e96443 0%, #ac62b1 80%, #c069c5 100%);
+    }
+
+</style>
+<body>
+<div class="item">
+    <button class="color1">GET STARTED</button>
+</div>
+<div class="item">
+    <button class="color2">GET STARTED</button>
+</div>
+<div class="item">
+    <button class="color3">GET STARTED</button>
+</div>
+<div class="item">
+    <button class="color4">GET STARTED</button>
+</div>
+<div class="back">
+    <i class="material-icons" onclick="window.history.back()">arrow_back</i>
+</div>
+</body>
+</html>
