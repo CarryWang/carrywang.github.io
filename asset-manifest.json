@@ -1,8 +1,14 @@
 {
-  "main.css": "static/css/main.1efd4dcc.css",
-  "main.css.map": "static/css/main.1efd4dcc.css.map",
-  "main.js": "static/js/main.b97b5804.js",
-  "main.js.map": "static/js/main.b97b5804.js.map",
+  "main.css": "static/css/main.92ed7e18.css",
+  "main.css.map": "static/css/main.92ed7e18.css.map",
+  "main.js": "static/js/main.5dca6c20.js",
+  "main.js.map": "static/js/main.5dca6c20.js.map",
+  "static\\media\\h1.png": "static/media/h1.212d2e24.png",
+  "static\\media\\h2.png": "static/media/h2.1ead19e9.png",
+  "static\\media\\h3.png": "static/media/h3.ed4fd35f.png",
+  "static\\media\\h4.png": "static/media/h4.1dcf6c5b.png",
+  "static\\media\\h5.png": "static/media/h5.cc218a9e.png",
+  "static\\media\\h6.png": "static/media/h6.70afecad.png",
   "static\\media\\s1.svg": "static/media/s1.05479b9c.svg",
   "static\\media\\s2.svg": "static/media/s2.872a97b5.svg",
   "static\\media\\s3.svg": "static/media/s3.b2c5e6f6.svg",
@@ -11,5 +17,6 @@
   "static\\media\\s6.svg": "static/media/s6.6d5ed8af.svg",
   "static\\media\\satellite4.svg": "static/media/satellite4.021c26fd.svg",
   "static\\media\\server.svg": "static/media/server.69e3cb34.svg",
+  "static\\media\\shapes-light.svg": "static/media/shapes-light.1d903b4c.svg",
   "static\\media\\stars.svg": "static/media/stars.5546c7c6.svg"
 }
